@@ -1,9 +1,19 @@
+# 添加开发环境配置 ▼▼▼
+[dev]
+  framework = "#static"    # 指定使用静态服务器
+  publish = "public"       # 指定静态文件目录（重要！）
+  target_port = 8888       # 开发服务器端口
+  auto_launch = true       # 自动打开浏览器
+
+# 保留您原有的 headers 配置 ▼▼▼
 [[headers]]
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "*"
     Access-Control-Allow-Methods = "*"
+
+# 保留您原有的 redirects 配置 ▼▼▼
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/proxy"
